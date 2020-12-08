@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+void rec(int Nch, int n) 
+{
+    if (Nch / n != 0) {
+       rec(Nch / n, n);
+    }
+    if (Nch% n < 10)
+    cout << Nch % n;
+    else
+    cout << char(Nch % n - 10 + 'A');
+}
+int main()
+{
+    system("chcp 1251>Nul");
+    int n, Nch;
+    cout << "Введите натуральное число:", cin >> Nch, cout << endl;
+    cout << "Введите систему счисления:", cin >> n, cout << endl;
+    rec(Nch, n);
+    return 0;
+}
